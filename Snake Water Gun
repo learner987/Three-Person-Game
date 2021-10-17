@@ -1,0 +1,65 @@
+#In this python based game, player is playing against the computer.
+#There are three options - Snake, Water and Gun to choose.
+#Gun will kill snake(Gun wins), Water will drown Gun(Water wins) and Snake will drink water(Snake wins)
+
+import random
+i = 0
+Yp = 0
+Cp = 0
+options = ["s", "w", "g"]
+
+print("Snake, Water, Gun - Game Begins\n" + "Only Enter s,w or g")
+
+while i < 10:
+    i += 1
+    my = input("plschoose:\n" + str(i))
+    
+
+    if my == "s":
+        comp = random.choice(options)
+        if comp == "s":
+            print("Tie")
+        elif comp == "w":
+            print("You win")
+            Yp = Yp + 1
+        else:
+            print("Comp wins")
+            Cp = Cp + 1
+
+            
+ #2nd criteria           
+    elif my == "w":
+        comp = random.choice(options)
+        if comp == "w":
+            print("Tie")
+        elif comp == "g":
+            print("You win")
+            Yp = Yp + 1
+        else:
+            print("Comp wins")
+            Cp = Cp + 1
+
+ #3rd criteria 
+    elif my == "g":
+        comp = random.choice(options)
+        if comp == "g":
+            print("Tie")
+        elif comp == "s":
+            print("You win")
+            Yp = Yp + 1
+        else:
+            print("Comp wins")
+            Cp = Cp + 1
+            
+    else:
+        print("check spelling")
+          
+
+print("Your Points = " + str(Yp))
+print("Comp Points = " + str(Cp))
+if Yp == Cp:
+    print("Tie")
+elif Yp > Cp:
+    print("You Win")
+else:
+    print("Comp Win")
